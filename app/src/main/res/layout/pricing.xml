@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <android.support.v7.widget.CardView
@@ -38,86 +40,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#c0c0c0"/>
-
-           <!-- <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginTop="30dp"
-                android:layout_weight="2">
-
-            <com.support.android.designlibdemo.RoundedImageView
-                android:id="@+id/imageView_round"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/cheese_1"
-
-
-                />
-                <com.support.android.designlibdemo.RoundedImageView
-                    android:id="@+id/imageView_round1"
-                    android:layout_width="80dp"
-                    android:layout_marginLeft="60dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/cheese_1"
-
-
-                    />
-                <com.support.android.designlibdemo.RoundedImageView
-                    android:id="@+id/imageView_round2"
-                    android:layout_width="80dp"
-                    android:layout_marginLeft="60dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/cheese_1"
-
-
-                    />
-                <com.support.android.designlibdemo.RoundedImageView
-                    android:id="@+id/imageView_round3"
-                    android:layout_width="80dp"
-                    android:layout_marginLeft="60dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/cheese_1"
-
-
-                    />
-            </LinearLayout>-->
-           <!-- </HorizontalScrollView>
-           <LinearLayout
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:orientation="horizontal"
-               android:layout_marginTop="6dp"
-               >
-               <TextView
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="Couple Shoot"
-                   android:textSize="15dp"
-                   android:textColor="#000"/>
-               <TextView
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="Couple Shoot"
-                   android:layout_marginLeft="60dp"
-                   android:textSize="15dp"
-                   android:textColor="#000"/>
-               <TextView
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="Couple Shoot"
-                   android:layout_marginLeft="60dp"
-                   android:textSize="15dp"
-                   android:textColor="#000"/>
-               <TextView
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="Couple Shoot"
-                   android:layout_marginLeft="60dp"
-                   android:textSize="15dp"
-                   android:textColor="#000"/>
-
-           </LinearLayout>-->
 <HorizontalScrollView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
@@ -303,69 +225,21 @@
             android:layout_height="1dp"
             android:background="#c0c0c0"/>
             />
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_weight="4"
-                android:padding="5dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1.Photographer"
-                    android:textColor="#000"
-                    android:textSize="12dp"
-                    android:layout_weight="1"
-                    android:paddingLeft="20dp"
-                    android:id="@+id/info"
-
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="2.Photographer"
-                    android:paddingLeft="5dp"
-                    android:textColor="#000"
-                    android:textSize="12dp"
-                    android:layout_weight="1"
-                    android:id="@+id/profile"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="3.Photographer"
-                    android:textColor="#000"
-                    android:textSize="12dp"
-                    android:paddingLeft="5dp"
-                    android:layout_weight="1"
-                    android:id="@+id/quot"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4.Photographer"
-                    android:textColor="#000"
-                    android:textSize="12dp"
-                    android:paddingLeft="5dp"
-                    android:layout_weight="1"
-                    android:id="@+id/order"/>
-            </LinearLayout>
-           </HorizontalScrollView>
-<!--
             <android.support.design.widget.TabLayout
-                android:id="@+id/tabs"
+                android:id="@+id/tabs_pricing"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 app:tabGravity="fill"
                 app:tabMaxWidth="0dp"
+                app:tabBackground="@color/app_color"
                 app:tabSelectedTextColor="@android:color/white"
-                app:tabTextColor="@android:color/white" >-->
+                app:tabTextColor="@android:color/white" />
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager_pricing"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
             <View
                 android:layout_width="match_parent"
@@ -373,200 +247,6 @@
                 android:background="#c0c0c0"
                 android:layout_marginTop="8dp"/>
             />
-          <LinearLayout
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:orientation="vertical"
-              android:layout_marginTop="25dp">
-              <TextView
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="0.5Days/4hours"
-                  android:textColor="#000"
-                  android:textSize="15dp"
-                  android:paddingLeft="5dp"
-
-                  />
-              <LinearLayout
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:orientation="horizontal">
-                  <TextView
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:text="Price Not providing"
-                      android:layout_marginTop="5dp"
-                      android:textColor="#000"
-                      android:textSize="12dp"
-                      android:paddingLeft="5dp"
-
-                      />
-                  <TextView
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:text="Edit"
-                      android:layout_marginTop="5dp"
-                      android:textColor="#000"
-                      android:textSize="12dp"
-                      android:layout_marginLeft="50dp"
-                      android:paddingLeft="5dp"
-
-                      />
-              </LinearLayout>
-              <View
-                  android:layout_width="match_parent"
-                  android:layout_height="1dp"
-                  android:background="#c0c0c0"
-                  android:layout_marginTop="8dp"/>
-              />
-
-
-          </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="25dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0.5Days/4hours"
-                android:textColor="#000"
-                android:textSize="15dp"
-                android:paddingLeft="5dp"
-
-                />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Price Not providing"
-                android:layout_marginTop="5dp"
-                android:textColor="#000"
-                android:textSize="12dp"
-                android:paddingLeft="5dp"
-
-                />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Add  Price"
-                    android:layout_marginTop="5dp"
-                    android:textColor="#000"
-                    android:textSize="12dp"
-                    android:layout_marginLeft="50dp"
-                    android:paddingLeft="5dp"
-
-                    />
-            </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#c0c0c0"
-                android:layout_marginTop="8dp"/>
-            />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="25dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0.5Days/4hours"
-                android:textColor="#000"
-                android:textSize="15dp"
-                android:paddingLeft="5dp"
-
-                />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Price Not providing"
-                    android:layout_marginTop="5dp"
-                    android:textColor="#000"
-                    android:textSize="12dp"
-                    android:paddingLeft="5dp"
-
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Add  Price"
-                    android:layout_marginTop="5dp"
-                    android:textColor="#000"
-                    android:textSize="12dp"
-                    android:layout_marginLeft="50dp"
-                    android:paddingLeft="5dp"
-
-                    />
-            </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#c0c0c0"
-                android:layout_marginTop="8dp"/>
-            />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="25dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0.5Days/4hours"
-                    android:textColor="#000"
-                    android:textSize="15dp"
-                    android:paddingLeft="5dp"
-
-                    />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Price Not providing"
-                        android:layout_marginTop="5dp"
-                        android:textColor="#000"
-                        android:textSize="12dp"
-                        android:paddingLeft="5dp"
-
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Add  Price"
-                        android:layout_marginTop="5dp"
-                        android:textColor="#000"
-                        android:textSize="12dp"
-                        android:layout_marginLeft="50dp"
-                        android:paddingLeft="5dp"
-
-                        />
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#c0c0c0"
-                    android:layout_marginTop="8dp"/>
-                />
-            </LinearLayout>
-
         </LinearLayout>
         </android.support.v7.widget.CardView>
 

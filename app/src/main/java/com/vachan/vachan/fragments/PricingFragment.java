@@ -6,16 +6,20 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.roomorama.caldroid.CaldroidFragment;
 import com.vachan.vachan.R;
 import com.vachan.vachan.activity.MainActivity;
+import com.vachan.vachan.adaptors.TabLayoutAdaptor;
 
 
 import java.util.ArrayList;
@@ -65,8 +69,12 @@ public class PricingFragment extends Fragment {
 
         public static class ViewHolder extends RecyclerView.ViewHolder {
 
+            TabLayout tabLayout;
+            ViewPager viewPager;
             public ViewHolder(View view) {
                 super(view);
+                tabLayout = (TabLayout)view.findViewById(R.id.tabs_pricing);
+                viewPager = (ViewPager)view.findViewById(R.id.viewpager_pricing);
             }
 
             @Override
@@ -97,21 +105,22 @@ public class PricingFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
-            CaldroidFragment caldroidFragment = new CaldroidFragment();
-            Bundle args = new Bundle();
-            Calendar cal = Calendar.getInstance();
-            args.putInt(CaldroidFragment.MONTH, cal.get(Calendar.MONTH) + 1);
-            args.putInt(CaldroidFragment.YEAR, cal.get(Calendar.YEAR));
-            caldroidFragment.setArguments(args);
-
-            FragmentTransaction t = ((MainActivity)context).getSupportFragmentManager().beginTransaction();
-            t.replace(R.id.calendar_fragment, caldroidFragment);
-            t.commit();
+            setupViewPager(holder.viewPager);
+            holder.tabLayout.setupWithViewPager(holder.viewPager);
         }
 
         @Override
         public int getItemCount() {
             return mValues.size();
+        }
+
+        private void setupViewPager(ViewPager viewPager) {
+            TabLayoutAdaptor adapter = new TabLayoutAdaptor(((MainActivity)context).getSupportFragmentManager());
+            adapter.addFragment(new PricingPhotography1(), "1.PHOTOGRAPY");
+            adapter.addFragment(new PricingFragment(), "2.PHOTOGRAPY");
+            adapter.addFragment(new CheeseListFragment(), "3.PHOTOGRAPY");
+            adapter.addFragment(new CheeseListFragment(), "4.PHOTOGRAPY");
+            viewPager.setAdapter(adapter);
         }
     }
 }
