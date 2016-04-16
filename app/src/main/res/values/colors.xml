@@ -16,6 +16,6 @@
   -->
 
 <resources>
-    <color name="window_background">#FFF5F5F5</color>
-  <color name="app_color">#FF5733</color>
+    <color name="window_background">#B8006A</color>
+  <color name="app_color">#B8006A</color>
 </resources>

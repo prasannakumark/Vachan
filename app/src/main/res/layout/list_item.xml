@@ -408,7 +408,7 @@
             android:layout_height="wrap_content"
             android:text="SUBMIT"
             android:textColor="#fff"
-            android:background="#FF5733"/>
+            android:background="#B8006A"/>
     </LinearLayout>
 
     <View

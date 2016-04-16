@@ -1,6 +1,7 @@
 package com.vachan.vachan.fragments;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -9,16 +10,20 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.app.AlertDialog;
 
 import com.roomorama.caldroid.CaldroidFragment;
 import com.vachan.vachan.R;
 import com.vachan.vachan.activity.MainActivity;
+import com.vachan.vachan.adaptors.RecyclerViewAdapter;
 import com.vachan.vachan.adaptors.TabLayoutAdaptor;
 
 
@@ -34,6 +39,8 @@ import java.util.List;
 public class PricingFragment extends Fragment {
 
     TabLayout tabLayout;
+
+
 
 
     @Nullable
@@ -61,8 +68,6 @@ public class PricingFragment extends Fragment {
 
         private final TypedValue mTypedValue = new TypedValue();
 
-
-
         private int mBackground;
         private List<String> mValues;
         private Context context;
@@ -71,10 +76,14 @@ public class PricingFragment extends Fragment {
 
             TabLayout tabLayout;
             ViewPager viewPager;
+            RecyclerView recyclerView;
+
             public ViewHolder(View view) {
                 super(view);
                 tabLayout = (TabLayout)view.findViewById(R.id.tabs_pricing);
                 viewPager = (ViewPager)view.findViewById(R.id.viewpager_pricing);
+                recyclerView = (RecyclerView)view.findViewById(R.id.recyclerview_couple_shoot);
+
             }
 
             @Override
@@ -105,8 +114,16 @@ public class PricingFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
+            LinearLayoutManager layoutManager
+                    = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
+            holder.recyclerView.setLayoutManager(layoutManager);
+            holder.recyclerView.setAdapter(new RecyclerViewAdapter(context));
+
+
+
             setupViewPager(holder.viewPager);
             holder.tabLayout.setupWithViewPager(holder.viewPager);
+
         }
 
         @Override
@@ -117,10 +134,14 @@ public class PricingFragment extends Fragment {
         private void setupViewPager(ViewPager viewPager) {
             TabLayoutAdaptor adapter = new TabLayoutAdaptor(((MainActivity)context).getSupportFragmentManager());
             adapter.addFragment(new PricingPhotography1(), "1.PHOTOGRAPY");
-            adapter.addFragment(new PricingFragment(), "2.PHOTOGRAPY");
-            adapter.addFragment(new CheeseListFragment(), "3.PHOTOGRAPY");
-            adapter.addFragment(new CheeseListFragment(), "4.PHOTOGRAPY");
+            adapter.addFragment(new PricingPhotography1(), "2.PHOTOGRAPY");
+            adapter.addFragment(new PricingPhotography1(), "3.PHOTOGRAPY");
+            adapter.addFragment(new PricingPhotography1(), "4.PHOTOGRAPY");
+            adapter.addFragment(new PricingPhotography1(), "5.PHOTOGRAPY");
+            adapter.addFragment(new PricingPhotography1(), "6.PHOTOGRAPY");
+
             viewPager.setAdapter(adapter);
         }
     }
+
 }

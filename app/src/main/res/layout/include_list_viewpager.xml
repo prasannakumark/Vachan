@@ -35,6 +35,7 @@
             android:layout_gravity="bottom"
             app:tabGravity="fill"
             app:tabMaxWidth="0dp"
+            app:tabIndicatorColor="@android:color/white"
             app:tabSelectedTextColor="@android:color/white"
             app:tabTextColor="@android:color/white" />
 

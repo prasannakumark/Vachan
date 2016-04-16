@@ -10,23 +10,40 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="18dp"
         >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+
         >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/hours"
+            >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0.5Days/4hours"
             android:textColor="#000"
+            android:layout_marginTop="10dp"
             android:textSize="15dp"
             android:paddingLeft="5dp"
+            android:layout_marginBottom="10dp"
+
 
             />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+              android:layout_marginLeft="150dp"
+                android:layout_marginTop="12dp"/>
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,7 +51,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Price Not providing"
+                android:text="Price Rs.1500"
                 android:layout_marginTop="5dp"
                 android:textColor="#000"
                 android:textSize="12dp"
@@ -52,6 +69,7 @@
                 android:paddingLeft="5dp"
 
                 />
+
         </LinearLayout>
         <View
             android:layout_width="match_parent"
@@ -66,16 +84,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="25dp">
-        <TextView
-            android:layout_width="wrap_content"
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="0.5Days/4hours"
-            android:textColor="#000"
-            android:textSize="15dp"
-            android:paddingLeft="5dp"
+            android:orientation="horizontal"
 
-            />
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.5Days/4hours"
+                android:textColor="#000"
+                android:layout_marginTop="10dp"
+                android:textSize="15dp"
+                android:paddingLeft="5dp"
+                android:layout_marginBottom="10dp"
+
+
+                />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="12dp"/>
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -115,16 +149,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="25dp">
-        <TextView
-            android:layout_width="wrap_content"
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="0.5Days/4hours"
-            android:textColor="#000"
-            android:textSize="15dp"
-            android:paddingLeft="5dp"
+            android:orientation="horizontal"
 
-            />
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.5Days/4hours"
+                android:textColor="#000"
+                android:layout_marginTop="10dp"
+                android:textSize="15dp"
+                android:paddingLeft="5dp"
+                android:layout_marginBottom="10dp"
+
+
+                />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="12dp"/>
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -163,16 +213,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="25dp">
-        <TextView
-            android:layout_width="wrap_content"
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="0.5Days/4hours"
-            android:textColor="#000"
-            android:textSize="15dp"
-            android:paddingLeft="5dp"
+            android:orientation="horizontal"
 
-            />
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.5Days/4hours"
+                android:textColor="#000"
+                android:layout_marginTop="10dp"
+                android:textSize="15dp"
+                android:paddingLeft="5dp"
+                android:layout_marginBottom="10dp"
+
+
+                />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="12dp"/>
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
