@@ -23,6 +23,7 @@ import android.app.AlertDialog;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.vachan.vachan.R;
 import com.vachan.vachan.activity.MainActivity;
+import com.vachan.vachan.adaptors.PricingTabPageAdapter;
 import com.vachan.vachan.adaptors.RecyclerViewAdapter;
 import com.vachan.vachan.adaptors.TabLayoutAdaptor;
 
@@ -38,110 +39,23 @@ import java.util.List;
  */
 public class PricingFragment extends Fragment {
 
-    TabLayout tabLayout;
-
-
-
-
+    private RecyclerView rv;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        RecyclerView rv = (RecyclerView) inflater.inflate(R.layout.fragment_cheese_list, container, false);
-        setupRecyclerView(rv);
+        if (rv == null) {
+            rv = (RecyclerView) inflater.inflate(R.layout.fragment_cheese_list, container, false);
+            setupRecyclerView(rv);
+        } else {
+            ((ViewGroup) rv.getParent()).removeView(rv);
+        }
         return rv;
     }
 
     private void setupRecyclerView(RecyclerView recyclerView) {
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
-        recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(),
-                getRandomSublist()));
+        recyclerView.setAdapter(new PricingTabPageAdapter(getActivity()));
     }
 
-    private List<String> getRandomSublist() {
-        ArrayList<String> list = new ArrayList<>(1);
-        list.add("1");
-        return list;
-    }
-
-    public static class SimpleStringRecyclerViewAdapter
-            extends RecyclerView.Adapter<SimpleStringRecyclerViewAdapter.ViewHolder> {
-
-        private final TypedValue mTypedValue = new TypedValue();
-
-        private int mBackground;
-        private List<String> mValues;
-        private Context context;
-
-        public static class ViewHolder extends RecyclerView.ViewHolder {
-
-            TabLayout tabLayout;
-            ViewPager viewPager;
-            RecyclerView recyclerView;
-
-            public ViewHolder(View view) {
-                super(view);
-                tabLayout = (TabLayout)view.findViewById(R.id.tabs_pricing);
-                viewPager = (ViewPager)view.findViewById(R.id.viewpager_pricing);
-                recyclerView = (RecyclerView)view.findViewById(R.id.recyclerview_couple_shoot);
-
-            }
-
-            @Override
-            public String toString() {
-                return super.toString();
-            }
-        }
-
-        public String getValueAt(int position) {
-            return mValues.get(position);
-        }
-
-        public SimpleStringRecyclerViewAdapter(Context context, List<String> items) {
-            context.getTheme().resolveAttribute(R.attr.selectableItemBackground, mTypedValue, true);
-            mBackground = mTypedValue.resourceId;
-            mValues = items;
-            this.context = context;
-        }
-
-        @Override
-        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.pricing, parent, false);
-            view.setBackgroundResource(mBackground);
-            return new ViewHolder(view);
-
-        }
-
-        @Override
-        public void onBindViewHolder(final ViewHolder holder, int position) {
-            LinearLayoutManager layoutManager
-                    = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
-            holder.recyclerView.setLayoutManager(layoutManager);
-            holder.recyclerView.setAdapter(new RecyclerViewAdapter(context));
-
-
-
-            setupViewPager(holder.viewPager);
-            holder.tabLayout.setupWithViewPager(holder.viewPager);
-
-        }
-
-        @Override
-        public int getItemCount() {
-            return mValues.size();
-        }
-
-        private void setupViewPager(ViewPager viewPager) {
-            TabLayoutAdaptor adapter = new TabLayoutAdaptor(((MainActivity)context).getSupportFragmentManager());
-            adapter.addFragment(new PricingPhotography1(), "1.PHOTOGRAPY");
-            adapter.addFragment(new PricingPhotography1(), "2.PHOTOGRAPY");
-            adapter.addFragment(new PricingPhotography1(), "3.PHOTOGRAPY");
-            adapter.addFragment(new PricingPhotography1(), "4.PHOTOGRAPY");
-            adapter.addFragment(new PricingPhotography1(), "5.PHOTOGRAPY");
-            adapter.addFragment(new PricingPhotography1(), "6.PHOTOGRAPY");
-
-            viewPager.setAdapter(adapter);
-        }
-    }
 
 }

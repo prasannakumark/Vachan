@@ -15,11 +15,17 @@ import com.vachan.vachan.R;
  */
 public class PricingPhotography1 extends Fragment {
 
+    private View view;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.list_pricing,null);
+        if (view == null) {
+            view = inflater.inflate(R.layout.list_pricing,null);
+        } else {
+            ((ViewGroup) view.getParent()).removeView(view);
+        }
+        return view;
     }
 }
 
