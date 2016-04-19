@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new CheeseListFragment(), "QUOTATION");
         adapter.addFragment(new CheeseListFragment(), "ORDER");
         viewPager.setAdapter(adapter);
-        viewPager.setOffscreenPageLimit(adapter.getCount());
+       // viewPager.setOffscreenPageLimit(adapter.getCount());
     }
 
     private void setupDrawerContent(NavigationView navigationView) {

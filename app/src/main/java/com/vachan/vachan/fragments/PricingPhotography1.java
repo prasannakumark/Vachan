@@ -19,13 +19,7 @@ public class PricingPhotography1 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        if (view == null) {
-            view = inflater.inflate(R.layout.list_pricing,null);
-        } else {
-            ((ViewGroup) view.getParent()).removeView(view);
-        }
-        return view;
+        return view = inflater.inflate(R.layout.list_pricing,container, false);
     }
 }
 

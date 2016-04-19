@@ -14,6 +14,7 @@ import com.vachan.vachan.R;
 import com.vachan.vachan.activity.MainActivity;
 import com.vachan.vachan.fragments.PricingPhotography1;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,15 +29,13 @@ public class PricingTabPageAdapter extends RecyclerView.Adapter<PricingTabPageAd
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        TabLayout tabLayout;
-        ViewPager viewPager;
-        RecyclerView recyclerView;
+
+        RecyclerView recyclerView,recyclerViewCandidatePhotography;
 
         public ViewHolder(View view) {
             super(view);
-            tabLayout = (TabLayout)view.findViewById(R.id.tabs_pricing);
-            viewPager = (ViewPager)view.findViewById(R.id.viewpager_pricing);
             recyclerView = (RecyclerView)view.findViewById(R.id.recyclerview_couple_shoot);
+            recyclerViewCandidatePhotography = (RecyclerView)view.findViewById(R.id.recyclerview_candidatePhotography);
 
         }
 
@@ -58,7 +57,6 @@ public class PricingTabPageAdapter extends RecyclerView.Adapter<PricingTabPageAd
                 .inflate(R.layout.pricing, parent, false);
         view.setBackgroundResource(mBackground);
         return new ViewHolder(view);
-
     }
 
     @Override
@@ -68,28 +66,23 @@ public class PricingTabPageAdapter extends RecyclerView.Adapter<PricingTabPageAd
         holder.recyclerView.setLayoutManager(layoutManager);
         holder.recyclerView.setAdapter(new RecyclerViewAdapter(context));
 
+        holder.recyclerViewCandidatePhotography.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
+        List<CandidateExpandableListAdapter.Item> data = new ArrayList<>();
 
+        for(int i=0;i<=7;i++){
+            CandidateExpandableListAdapter.Item item;
+            if(i%2 == 0)
+                item = new CandidateExpandableListAdapter.Item(0);
+            else
+                item = new CandidateExpandableListAdapter.Item(1);
 
-        setupViewPager(holder.viewPager);
-        holder.tabLayout.setupWithViewPager(holder.viewPager);
-
+            data.add(item);
+        }
+        holder.recyclerViewCandidatePhotography.setAdapter(new CandidateExpandableListAdapter(context,data));
     }
 
     @Override
     public int getItemCount() {
         return 1;
-    }
-
-    private void setupViewPager(ViewPager viewPager) {
-        TabLayoutAdaptor adapter = new TabLayoutAdaptor(((MainActivity)context).getSupportFragmentManager());
-        adapter.addFragment(new PricingPhotography1(), "1.PHOTOGRAPY");
-        adapter.addFragment(new PricingPhotography1(), "2.PHOTOGRAPY");
-        adapter.addFragment(new PricingPhotography1(), "3.PHOTOGRAPY");
-        adapter.addFragment(new PricingPhotography1(), "4.PHOTOGRAPY");
-        adapter.addFragment(new PricingPhotography1(), "5.PHOTOGRAPY");
-        adapter.addFragment(new PricingPhotography1(), "6.PHOTOGRAPY");
-
-        viewPager.setAdapter(adapter);
-        viewPager.setOffscreenPageLimit(adapter.getCount());
     }
 }
